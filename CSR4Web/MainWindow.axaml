@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CSR4Web.MainWindow"
+		ExtendClientAreaToDecorationsHint="True"
+        Title="Certificate Signing Request for Websites">
+	<Grid RowDefinitions="30,1*">
+		<Border Background="#211F20" CornerRadius="0,0" PointerPressed="OnTitlebarPointerMoved">
+			<Label x:Name="TitleLabel" Foreground="#F1EEEC" VerticalContentAlignment="Center" Margin="8,0,0,0"/>
+		</Border>
+		<Grid Grid.Row="1" ColumnDefinitions="2*,8,260" RowDefinitions="Auto,8,1*" Margin="8">
+			<TextBox Grid.Column="0" Grid.Row="0" x:Name="Domain" FontFamily="Consolas" Foreground="#F1EEEC"/>
+			<TextBox Grid.Column="2" Grid.Row="0" x:Name="DefaultBits" FontFamily="Consolas" Foreground="#F1EEEC" Text="2048"/>
+			<TextBox Grid.Column="0" Grid.Row="2" x:Name="Editor" FontFamily="Consolas" Foreground="#F1EEEC"/>
+			<Grid Grid.Column="2" Grid.Row="3" Grid.RowSpan="2" RowDefinitions="Auto,8,Auto,8,Auto">
+				<Button Content="Generate CSR" Width="260" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="OnGenerateCSRClick"/>
+				<Image Grid.Column="0" Grid.Row="2" x:Name="StatusImage" Height="260"/>
+			</Grid>
+		</Grid>
+	</Grid>
+</Window>
